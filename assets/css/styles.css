@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden; 
+}
+.slider-container .slider-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+/* item 1 */
+.slider-item1-shape {
+    position: absolute;
+    top: 20%;
+    left: -5%;
+    width: 2500px;
+    height: 300px;
+    background-color: rgb(33, 33, 33); /* Màu nền */
+    opacity: 0;
+    animation: slideItem1 1.05s ease-out forwards;
+    z-index: 0; 
+    background-color: rgb(33, 33, 33);
+    transition: none;
+    text-align: inherit;
+    opacity: 1;
+}
+
+/* Animation phóng to và quay */
+@keyframes slideItem1 {
+    0% {
+        transform: rotateZ(90deg) scale(2);
+        opacity: 0;
+    }
+    90% {
+        transform: rotateZ(-15deg) scale(2);
+        opacity: 1;
+        background-color: rgba(33, 33, 33, .5);
+    }
+    100% {
+        transform: rotateZ(-15deg) scale(1);
+        opacity: 1;
+        background-color: rgba(33, 33, 33, .5);
+    }
+}
+/* end item 1 */
+/* item 2 */
+.slider-item2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90px;
+    height: 90px;
+    z-index: 5;
+    opacity: 0;
+    animation: slideItem2 .5s 1s ease-in-out forwards, slideImgItem2_1 3s 1s  alternate-reverse infinite;
+    background-color: rgba(155, 245, 114, 0.3);
+}
+.slide-img-2{
+    animation: slideImgItem2 1.5s ease-in-out forwards;
+    transition: 1s;
+}
+/* Animation */
+@keyframes slideItem2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        left: 20%;
+        top: 15%;
+        transform: translate(-120px, -120px);
+        /* transform: translate(-150px, -150px); */
+        opacity: 1;
+    }
+}
+@keyframes slideImgItem2 {
+    0% {
+        transform: rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(15deg);
+        opacity: 1;
+    }
+}
+@keyframes slideImgItem2_1 {
+    0% {
+        /* transform: translate(350px, 350px); */
+        
+    }
+    100% {
+        transform: translate(-170px, -170px);
+    }
+}
+
+/* end item 2 */
+/* item 3 */
+/* end item 3 */
+/* item  4*/
+/* end item 4 */
+/* item 5 */
+/* end item 5 */
+/* item 6 */
+/* end item 6 */
+/* item 7 */
+/* end item 7 */
+/* item 8 */
+/* end item 8 */
+/* item 9 */
+/* end item 9 */
+/* item 10 */
+/* end item 10 */
+/* item 11 */
+/* end item 11 */
+/* item 12 */
+/* end item 12 */
+/* item 13 */
+/* end item 13 */
+/* item 14 */
+/* end item 14 */
+/* item 15 */
+/* end item 15 */
+/* item 16 */
+/* end item 16 */
+/* item 17 */
+/* end item 17 */
+/* item 18 */
+/* end item 18 */
+/* item 19 */
+/* end item 19 */
+/* item 20 */
+/* end item 20 */
+/* item 21 */
+/* end item 21 */
+/* item 22 */
+/* end item 22 */
+/* item 23 */
+/* end item 23 */
+
+
+
+
+
+/* Responsive CSS cho các kích thước khác nhau */
+/* item 1 */
+@media (max-width: 1200px) {
+    .slider-item1-shape {
+      height: 400px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .slider-item1-shape {
+      height: 300px;
+    }
+  }
+/* end item 1 */
+  
+/* item 2 */
+/* end item 2 */
+/* item 3 */
+/* end item 3 */
+/* item  4*/
+/* end item 4 */
+/* item 5 */
+/* end item 5 */
+/* item 6 */
+/* end item 6 */
+/* item 7 */
+/* end item 7 */
+/* item 8 */
+/* end item 8 */
+/* item 9 */
+/* end item 9 */
+/* item 10 */
+/* end item 10 */
+/* item 11 */
+/* end item 11 */
+/* item 12 */
+/* end item 12 */
+/* item 13 */
+/* end item 13 */
+/* item 14 */
+/* end item 14 */
+/* item 15 */
+/* end item 15 */
+/* item 16 */
+/* end item 16 */
+/* item 17 */
+/* end item 17 */
+/* item 18 */
+/* end item 18 */
+/* item 19 */
+/* end item 19 */
+/* item 20 */
+/* end item 20 */
+/* item 21 */
+/* end item 21 */
+/* item 22 */
+/* end item 22 */
+/* item 23 */
+/* end item 23 */
+
+
