@@ -1,0 +1,138 @@
+/* Responsive CSS cho các kích thước khác nhau */
+/* item 1 */
+@media (max-width: 1200px) {
+    .slider-item1-shape {
+      height: 400px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .slider-item1-shape {
+      height: 300px;
+    }
+    .slider-item3 {
+        top: 54px;
+        left: -86px;
+        width: 265px;
+        height: 30px;
+    }
+    .slider-item4 {
+    }
+    .slider-item5 {
+    }
+    .slider-item6 {
+      max-width: 400px;
+    }
+    .slider-item7 {
+      max-width: 400px;
+    }
+    .slider-item8 {
+      width: 50px;
+      height: 50px;
+      max-width: 250px;
+    }
+    .slider-item9 {
+        width: 150px;
+    }
+    .slider-item10 {
+    }
+    .slider-item11 {
+        width: 2000px;
+        height: 400px;
+    }
+    .slider-item12 {
+        font-size: 50px;
+        letter-spacing: 20px;
+    }
+    .slider-item13 {
+    }
+    .slider-item14 {
+    }
+    .slider-item15 {
+    }
+    .slider-item16 {
+    }
+    .slider-item17 {
+    }
+    .slider-item18 {
+      font-size: 50px;
+      letter-spacing: 20px;
+      width: 400px;
+      height: 500px;
+    }
+  }
+  @media (max-width: 768px) {
+    .slider-item1-shape {
+        height: 300px;
+    }
+    .slider-item3 {
+        top: 54px;
+        left: -86px;
+        width: 265px;
+        height: 30px;
+    }
+    .slider-item4 {
+    }
+    .slider-item5 {
+    }
+    .slider-item6 {
+    }
+    .slider-item7 {
+    }
+    .slider-item8 {
+    }
+    .slider-item9 {
+    }
+    .slider-item10 {
+    }
+    .slider-item11 {
+        width: 1500px;
+        height: 300px;
+    }
+    .slider-item12 {
+        
+    }
+    .slider-item13 {
+    }
+    .slider-item14 {
+    }
+    .slider-item15 {
+    }
+    .slider-item16 {
+    }
+    .slider-item17 {
+    }
+    .slider-item18 {
+    }
+}
+
+/* item 10 */
+/* end item 10 */
+/* item 11 */
+/* end item 11 */
+/* item 12 */
+/* end item 12 */
+/* item 13 */
+/* end item 13 */
+/* item 14 */
+/* end item 14 */
+/* item 15 */
+/* end item 15 */
+/* item 16 */
+/* end item 16 */
+/* item 17 */
+@media (max-width: 768px) {
+    .slider-item11 {
+      width: 50px;
+      height: 50px;
+      max-width: 250px;
+      width: 150px;
+    }
+    
+    .slider-item11 img {
+      max-width: 250px;
+    }
+    .slider-item14 {
+      width: 150px;
+    }
+  }
