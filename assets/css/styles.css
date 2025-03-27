@@ -1,100 +1,115 @@
-*{
+* {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background: #fff;
 }
+
 /*********** header ************/
 
- /*****  header-menu *****/
- .bg-menu{
-    /* background: rgba(0, 0, 0, .8); */
- }
-.navbar{
-    margin-bottom: -84px;
-    border-top: 0;
-    position: relative;
-    z-index: 9;
-}
-.navbar-collapse{
-    justify-self: center;
-}
-.navbar .navbar-nav{
-    display: flex;
-    list-style: none;
-}
-.navbar .navbar-nav .nav-link:hover{
-    color: #3f271e;
-}
-.navbar .navbar-nav .nav-link.active {
-    background: #6f3727;
-    border: 1px solid #3f271e;
-    border-radius: 5px;
-    color: #fff;
-}
-.navbar .navbar-nav .nav-link.active:hover{
-    background: #3f271e;
-    border: 1px solid #3f271e;
-    color: #fff;
-}
-.navbar .navbar-nav .nav-link{
-   padding: 10px 20px 10px 20px;
-   color: #fff;
-   font-weight: 600;
-   font-size: 18px;
-   text-decoration: none;
-}
-.navbar .navbar-nav .item-icon{
-    color: #fff;
-    margin-left: 15px;
-}
-.nav-item:hover .item-icon {
-    color: #3e8e41;
-}
-/****** drop menu end*****/
 
-/******** header-Menu end *********/
-/******** Slide Down a Bar on Scroll *********/
-#navbar-menu{
-    position: fixed;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #191a1d;
 }
-/******** Slide Down a Bar on Scroll END*********/
-/***** header-menu end *****/
-/*********** header end ************/
-#navbar-toggle {
+
+#header .navbar-brand {
+    font-size: 1.75rem;
+    padding: 0;
+    margin: 0;
     display: none;
-    color: #000;
-    text-align: right;
-    /* padding: 10px; */
-    font-size: 20px;
-    cursor: pointer;
 }
-#navbar-toggle .fa-bars{
-    border: solid 1px #fff ;
-    padding: 8px;
+
+#header .nav-link {
     color: #fff;
-    font-size: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 18px;
 }
+
+#header .nav-link:hover {
+    color: #de1002;
+}
+
+#header .nav-link:focus {
+    color: #de1002;
+}
+
+#header .active {
+    color: #de1002;
+}
+
+.drop_1 {
+    min-width: 220px;
+    padding: 0;
+    border-radius: 0;
+    margin-top: 21px !important;
+    border-top: 2px solid #de1002;
+    background: #191a1d;
+}
+
+.drop_1 a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #909090;
+    border-bottom: 1px solid #28292e;
+    font-weight: bold;
+}
+
+.drop_1 a:hover {
+    background: #101012;
+    color: #fff;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #191a1d;
+}
+
+.sticky {
+    top: -40px;
+    transform: translateY(40px);
+    transition: transform .3s;
+}
+
+.sticky .navbar-brand {
+    display: block !important;
+    margin-right: 250px !important;
+}
+
+.sticky .drop_1 {
+    margin-top: 11px !important;
+}
+
+/*********************header_end****************/
+/*********** end header ************/
+
 .slider-container {
     position: relative;
     width: 100%;
-    height: 100vh; 
-    overflow: hidden; 
+    height: 100vh;
+    overflow: hidden;
 }
+
 .slider-container .slider-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
+
 /* item 1 */
 .slider-item1-shape {
     position: absolute;
@@ -105,7 +120,7 @@ body {
     /* background-color: rgb(33, 33, 33);  */
     opacity: 0;
     animation: slideItem1 .8s ease-out;
-    z-index: 0; 
+    z-index: 0;
     transition: none;
     text-align: inherit;
     opacity: 1;
@@ -118,18 +133,21 @@ body {
         transform: rotateZ(90deg) scale(2);
         opacity: 0;
     }
+
     90% {
         background-color: rgb(33, 33, 33);
         transform: rotateZ(-15deg) scale(2);
         opacity: 1;
         background-color: rgba(33, 33, 33, .5);
     }
+
     100% {
         transform: rotateZ(-15deg) scale(1);
         opacity: 1;
         background-color: rgba(33, 33, 33, .5);
     }
 }
+
 /* end item 1 */
 /* item 2 */
 .slider-item2 {
@@ -140,18 +158,21 @@ body {
     height: 90px;
     z-index: 2;
     opacity: 0;
-    animation: slideItem2 .5s .8s ease-in-out forwards, slideImgItem2_1 3s 1s  alternate-reverse infinite;
+    animation: slideItem2 .5s .8s ease-in-out forwards, slideImgItem2_1 3s 1s alternate-reverse infinite;
     background-color: rgba(155, 245, 114, 0.3);
 }
-.slide-img-2{
+
+.slide-img-2 {
     animation: slideImgItem2 1.5s ease-in-out forwards;
     transition: 1s;
 }
+
 /* Animation */
 @keyframes slideItem2 {
     0% {
         opacity: 0;
     }
+
     100% {
         left: 20%;
         top: 15%;
@@ -159,21 +180,25 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes slideImgItem2 {
     0% {
         transform: rotate(360deg);
         opacity: 0;
     }
+
     100% {
         transform: rotate(15deg);
         opacity: 1;
     }
 }
+
 @keyframes slideImgItem2_1 {
     0% {
         /* transform: translate(350px, 350px); */
-        
+
     }
+
     100% {
         transform: translate(-170px, -170px);
     }
@@ -186,10 +211,10 @@ body {
     left: 50%;
     top: 50%;
     width: 100px;
-    height: 100px; 
+    height: 100px;
     opacity: 0;
     animation: slideItem3 .5s 0.8s ease-in-out forwards;
-    z-index: 6; 
+    z-index: 6;
 }
 
 /* Animation hiệu ứng quay và di chuyển */
@@ -197,6 +222,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         left: 10%;
         top: 15%;
@@ -214,34 +240,37 @@ body {
     transform: translate(-50%, -50%) rotate(-180deg);
     opacity: 0;
     z-index: 2;
-  }
-  
-  /* Image styling */
-  .image-item-4 {
+}
+
+/* Image styling */
+.image-item-4 {
     width: 250px;
     height: 250px;
     object-fit: contain;
     transition: transform 1.5s ease-in-out, opacity 1.5s ease;
     animation: slideItem4 .5s .8s forwards;
-  }
-  
-  /* Keyframes for the animation */
-  @keyframes slideItem4 {
+}
+
+/* Keyframes for the animation */
+@keyframes slideItem4 {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) rotate(-180deg);
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-180deg);
     }
+
     50% {
-      opacity: 1;
-      transform: translate(-50%, -50%) rotate(90deg);
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(90deg);
     }
+
     100% {
-       left: 30%;
-       top: 80%;
-      opacity: 1;
-      transform: translate(-50%, -50%) rotate(25deg);
+        left: 30%;
+        top: 80%;
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(25deg);
     }
-  }
+}
+
 /* end item 4 */
 /* item 5 */
 .slider-item5 {
@@ -252,56 +281,65 @@ body {
     opacity: 0;
     z-index: 6;
     animation: slideItem5 .5s .8s forwards;
-  }
-  
-  /* Image styling */
-  .image-item-5 {
+}
+
+/* Image styling */
+.image-item-5 {
     width: 230px;
     height: 130px;
     object-fit: contain;
     transition: transform 1.5s ease-in-out, opacity 1.5s ease;
-  }
-  
-  /* Keyframes for the animation */
-  @keyframes slideItem5 {
+}
+
+/* Keyframes for the animation */
+@keyframes slideItem5 {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) rotate(-180deg);
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-180deg);
     }
+
     50% {
-      opacity: 1;
-      transform: translate(-50%, -50%) rotate(15deg);
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(15deg);
     }
+
     100% {
-       left: 90%;
-       top: 50%;
-      opacity: 1;
-      transform: translate(-50%, -50%) rotate(0deg);
+        left: 90%;
+        top: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg);
     }
-  }
+}
+
 /* end item 5 */
 /* item 6,7,8 */
-.slider-item6, .slider-item7, .slider-item8 {
+.slider-item6,
+.slider-item7,
+.slider-item8 {
     position: absolute;
     top: 25%;
     left: 40%;
     opacity: 0;
     z-index: 3;
 }
-.slider-item6{
+
+.slider-item6 {
     animation: slideItem6 .5s .8s ease-in-out forwards;
 }
+
 .slider-item6 img {
     width: 100%;
     max-width: 510px;
     height: auto;
 }
+
 /* Animation for Image Layers */
 @keyframes slideItem6 {
     0% {
         opacity: 0;
         transform: translateY(50px) rotate(-180deg);
     }
+
     100% {
         opacity: 1;
         top: 60%;
@@ -309,16 +347,19 @@ body {
         transform: translateY(0) rotate(0deg);
     }
 }
+
 /* end item 6 */
 /* item 7 */
-.slider-item7{
+.slider-item7 {
     animation: slideItem7 .5s .8s ease-in-out forwards;
 }
+
 @keyframes slideItem7 {
     0% {
         opacity: 0;
         transform: translateY(50px) rotate(-180deg);
     }
+
     100% {
         opacity: 1;
         top: 5%;
@@ -326,15 +367,18 @@ body {
         transform: translateY(0) rotate(0deg);
     }
 }
+
 /* end item 7 */
 /* item 8 */
-.slider-item8{
+.slider-item8 {
     animation: slideItem8 .5s .8s ease-in-out forwards;
 }
+
 @keyframes slideItem8 {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
         top: 1%;
@@ -342,36 +386,39 @@ body {
         transform: translateY(0) rotate(15deg);
     }
 }
+
 /* end item 8 */
 /* item 9 */
 .slider-item9 {
     position: absolute;
-    top : 25%;  
+    top: 25%;
     left: 40%;
     z-index: 4;
     opacity: 0;
     animation: slideItem9 .5s .8s ease-in-out forwards;
-  }
-  
-  .slider-item9 img {
+}
+
+.slider-item9 img {
     width: 100%;
     max-width: 390px;
     height: auto;
-  }
-  
-  /* Animation for Image Layers */
-  @keyframes slideItem9 {
+}
+
+/* Animation for Image Layers */
+@keyframes slideItem9 {
     0% {
-      opacity: 0;
-      transform: translateY(50px) rotate(180deg);
+        opacity: 0;
+        transform: translateY(50px) rotate(180deg);
     }
+
     100% {
-      opacity: 1;
-      top : 50%;  
-      left: 5%;
-      transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        top: 50%;
+        left: 5%;
+        transform: translateY(0) rotate(0deg);
     }
-  }
+}
+
 /* end item 9 */
 /* item 10 */
 .slider-item10 {
@@ -382,20 +429,23 @@ body {
     height: 45px;
     z-index: 5;
     opacity: 0;
-    animation: slideItem10 .5s .8s ease-in-out forwards, slideImgItem10_1 3s 1s  alternate-reverse infinite;
+    animation: slideItem10 .5s .8s ease-in-out forwards, slideImgItem10_1 3s 1s alternate-reverse infinite;
     /* background-color: rgba(155, 245, 114, 0.3); */
 }
-.slide-img-10{
+
+.slide-img-10 {
     width: 45px;
     height: 45px;
     animation: slideImgItem10 .8s 1.5s ease-in-out forwards;
     transition: 1s;
 }
+
 /* Animation */
-@keyframes slideItem10{
+@keyframes slideItem10 {
     0% {
         opacity: 0;
     }
+
     100% {
         left: 90%;
         top: 15%;
@@ -403,25 +453,30 @@ body {
         opacity: 1;
     }
 }
+
 @keyframes slideImgItem10 {
     0% {
         transform: rotate(30deg);
         opacity: 0;
     }
+
     100% {
         transform: rotate(15deg);
         opacity: 1;
     }
 }
+
 @keyframes slideImgItem10_1 {
     0% {
         /* transform: translate(350px, 350px); */
-        
+
     }
+
     100% {
         transform: translate(-170px, -170px);
     }
 }
+
 /* end item 10 */
 /* item  11*/
 .slider-item11 {
@@ -429,13 +484,14 @@ body {
     left: 50%;
     top: 50%;
     width: 100px;
-    height: 100px; 
+    height: 100px;
     animation: slideItem11 .8s 1.3s ease-in-out forwards;
     border: 3px solid rgb(138, 238, 163);
-    border-radius: 50%; 
+    border-radius: 50%;
     opacity: 0;
-    z-index: 6; 
+    z-index: 6;
 }
+
 .slider-item11 .slider-item11-rs-looped {
     position: absolute;
     top: 0;
@@ -453,10 +509,12 @@ body {
         transform: scale(1);
         opacity: 0.3;
     }
+
     50% {
         transform: scale(1.5);
         opacity: .5;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -469,6 +527,7 @@ body {
         transform: rotate(360deg);
         opacity: 0;
     }
+
     100% {
         left: 90%;
         top: 80%;
@@ -476,6 +535,7 @@ body {
         opacity: 1;
     }
 }
+
 /* end item 11 */
 /* item 12 */
 .slider-item12 {
@@ -489,10 +549,10 @@ body {
     border-radius: 25px;
     opacity: 0;
     z-index: 16;
-    animation: slideItem12 .8s 1.3s ease-in-out forwards, slideItem12_2 3s 1s  alternate-reverse infinite;
-  }
-  
-  .slider-item12-rs-looped{
+    animation: slideItem12 .8s 1.3s ease-in-out forwards, slideItem12_2 3s 1s alternate-reverse infinite;
+}
+
+.slider-item12-rs-looped {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -502,40 +562,48 @@ body {
     background: transparent;
     border-radius: 50%;
     animation: slideItem8_1 3s infinite linear;
-  }
-  @keyframes slideItem12 {
+}
+
+@keyframes slideItem12 {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
     }
+
     100% {
-      opacity: 1;
-      top : 70%;  
-      left: 90%;
-      transform: translate(-50%, -50%) scale(1) rotate(15deg);
+        opacity: 1;
+        top: 70%;
+        left: 90%;
+        transform: translate(-50%, -50%) scale(1) rotate(15deg);
     }
-  }
-  /* Wave Effect Animation */
-  @keyframes slideItem12_1 {
+}
+
+/* Wave Effect Animation */
+@keyframes slideItem12_1 {
     0% {
-      transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
-      transform: translate(-50%, -50%) scale(1.2);
+        transform: translate(-50%, -50%) scale(1.2);
     }
+
     100% {
-      transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
-  }
+}
+
 @keyframes slideItem12_2 {
     0% {
         /* transform: translate(350px, 350px); */
-        
+
     }
+
     100% {
         transform: translate(-170px, -170px);
     }
 }
+
 /* end item 12 */
 /* item 13 */
 /* Vòng tròn di chuyển theo quỹ đạo vòng tròn */
@@ -559,18 +627,21 @@ body {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.7);
     }
+
     100% {
         opacity: 1;
-        top : 10%;  
+        top: 10%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
 /* Quay vòng tròn */
 @keyframes slideItem13_1 {
     0% {
         transform: translate(-50%, -50%) rotate(360deg) translateX(20px) rotate(-360deg);
     }
+
     100% {
         transform: translate(-50%, -50%) rotate(0deg) translateX(20px) rotate(0deg);
     }
@@ -589,10 +660,10 @@ body {
     border-radius: 25px;
     opacity: 0;
     z-index: 16;
-    animation: slideItem14 .8s 1.5s ease-in-out forwards, slideItem14_2 3s 1s  alternate-reverse infinite;
-  }
-  
-  .slider-item14-rs-looped{
+    animation: slideItem14 .8s 1.5s ease-in-out forwards, slideItem14_2 3s 1s alternate-reverse infinite;
+}
+
+.slider-item14-rs-looped {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -602,40 +673,48 @@ body {
     background: transparent;
     border-radius: 50%;
     animation: slideItem14_1 3s infinite linear;
-  }
-  @keyframes slideItem14 {
+}
+
+@keyframes slideItem14 {
     0% {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7);
     }
+
     100% {
-      opacity: 1;
-      top : 60%;  
-      left: 10%;
-      transform: translate(-50%, -50%) scale(1) rotate(-15deg);
+        opacity: 1;
+        top: 60%;
+        left: 10%;
+        transform: translate(-50%, -50%) scale(1) rotate(-15deg);
     }
-  }
-  /* Wave Effect Animation */
-  @keyframes slideItem14_1 {
+}
+
+/* Wave Effect Animation */
+@keyframes slideItem14_1 {
     0% {
-      transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
-      transform: translate(-50%, -50%) scale(1.2);
+        transform: translate(-50%, -50%) scale(1.2);
     }
+
     100% {
-      transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
-  }
+}
+
 @keyframes slideItem14_2 {
     0% {
         /* transform: translate(350px, 350px); */
-        
+
     }
+
     100% {
         transform: translate(-10px, -10px);
     }
 }
+
 /* end item 14 */
 /* item 15 */
 .slider-item15 {
@@ -648,19 +727,21 @@ body {
     background-color: #2367f8;
     opacity: 0;
     animation: slideItem15 .8s 1.5s ease-in-out forwards;
-  }
-  
-  /* Bottom Bar Animation */
-  @keyframes slideItem15 {
+}
+
+/* Bottom Bar Animation */
+@keyframes slideItem15 {
     0% {
-      opacity: 0;
-      width: 0px;
+        opacity: 0;
+        width: 0px;
     }
+
     100% {
-      opacity: 1;
-      width: 300px;
+        opacity: 1;
+        width: 300px;
     }
-  }
+}
+
 /* end item 15 */
 /* item 16 */
 .slider-item16 {
@@ -678,48 +759,57 @@ body {
 /* Animation for Shape Layers */
 @keyframes slideItem16 {
     0% {
-    opacity: 0;
-    transform: rotate(360deg);
+        opacity: 0;
+        transform: rotate(360deg);
     }
+
     100% {
-    opacity: 1;
-    top : 30%;  
-    left: 10%;
-    transform: rotate(45deg);
+        opacity: 1;
+        top: 30%;
+        left: 10%;
+        transform: rotate(45deg);
     }
 }
+
 .slider-item16-rs-looped {
     width: 100%;
     height: 100%;
     animation: slideItem16_1 6s infinite linear;
 }
+
 @keyframes slideItem16_1 {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.2);
     }
+
     100% {
         transform: scale(1);
     }
 }
+
 /* Quay vòng tròn */
 @keyframes slideItem16_2 {
     0% {
         transform: translate(-50%, -50%) rotate(0deg) translateX(20px) rotate(0deg);
     }
+
     100% {
         transform: translate(-50%, -50%) rotate(360deg) translateX(20px) rotate(-360deg);
     }
 }
+
 /* end item 16 */
 /* item 17 */
 .slider-item17 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg); /* Vừa căn giữa vừa xoay */
+    transform: translate(-50%, -50%) rotate(45deg);
+    /* Vừa căn giữa vừa xoay */
     width: 120px;
     height: 120px;
     border: 3px solid #fff;
@@ -731,13 +821,16 @@ body {
 @keyframes slideItem17 {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) rotate(360deg); /* Ban đầu là không nhìn thấy và xoay */
+        transform: translate(-50%, -50%) rotate(360deg);
+        /* Ban đầu là không nhìn thấy và xoay */
     }
+
     100% {
         opacity: 1;
         top: 70%;
         left: 70%;
-        transform: translate(-50%, -50%) rotate(45deg); /* Cuối cùng là xuất hiện và xoay 45 độ */
+        transform: translate(-50%, -50%) rotate(45deg);
+        /* Cuối cùng là xuất hiện và xoay 45 độ */
     }
 }
 
@@ -752,9 +845,12 @@ body {
     0% {
         transform: scale(1);
     }
+
     50% {
-        transform: scale(1.2); /* Lớn hơn một chút tại giữa */
+        transform: scale(1.2);
+        /* Lớn hơn một chút tại giữa */
     }
+
     100% {
         transform: scale(1);
     }
@@ -763,12 +859,16 @@ body {
 /* Quay vòng tròn */
 @keyframes slideItem17_2 {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg) translateX(20px) rotate(0deg); /* Ban đầu */
+        transform: translate(-50%, -50%) rotate(0deg) translateX(20px) rotate(0deg);
+        /* Ban đầu */
     }
+
     100% {
-        transform: translate(-50%, -50%) rotate(360deg) translateX(20px) rotate(360deg); /* Cuối cùng quay vòng tròn */
+        transform: translate(-50%, -50%) rotate(360deg) translateX(20px) rotate(360deg);
+        /* Cuối cùng quay vòng tròn */
     }
 }
+
 /* end item 17 */
 /* item 18 */
 /* Slider item */
@@ -779,16 +879,19 @@ body {
     transform: translate(-50%, -50%) scale(0.7);
     width: 700px;
     height: 300px;
-    border: 20px solid #ffffff; /* Hoặc sử dụng border-image cho hiệu ứng gradient */
+    border: 20px solid #ffffff;
+    /* Hoặc sử dụng border-image cho hiệu ứng gradient */
     opacity: 0;
     transition: opacity 1.5s ease, transform 1.5s ease;
     z-index: 10;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* Tạo nền mờ cho phần tử */
+    background: rgba(0, 0, 0, 0.5);
+    /* Tạo nền mờ cho phần tử */
     color: #fff;
     text-align: center;
-    animation: slideItem18 .8s 1.8s ease-in-out forwards,  slideItem18_1 .8s 3s ease-in-out forwards;
+    animation: slideItem18 .8s 1.8s ease-in-out forwards, slideItem18_1 .8s 3s ease-in-out forwards;
 }
+
 /* Styling for heading and paragraph */
 .slider-item18 h1 {
     font-size: 30px;
@@ -807,52 +910,61 @@ body {
     opacity: 0;
     animation: fadeInText2 3s 2s ease-in-out forwards;
 }
+
 /* Animation slide item */
 @keyframes slideItem18 {
     0% {
         opacity: 0;
         transform: translate(-50%, -50%) scale(0.1);
     }
+
     100% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
 }
+
 @keyframes slideItem18_1 {
     0% {
         opacity: 1;
         transform: translate(-50%, -50%);
     }
+
     100% {
         opacity: 1;
         width: 600px;
         height: 300px;
-        transform: translate(-80%,-50%);
+        transform: translate(-80%, -50%);
     }
 }
+
 /* Chữ xuất hiện đẹp mắt */
 @keyframes fadeInText {
     0% {
         opacity: 0;
         transform: translateY(80px);
     }
+
     100% {
         opacity: 1;
         font-size: 30px;
         transform: translateY(0);
     }
 }
+
 @keyframes fadeInText2 {
     0% {
         opacity: 0;
         font-size: 12px;
         transform: translateY(80px);
     }
+
     50% {
         opacity: 0;
         font-size: 12px;
         transform: translateY(80px);
     }
+
     100% {
         opacity: 1;
         font-size: 12px;
@@ -871,25 +983,184 @@ body {
     opacity: 0;
     z-index: 19;
     animation: slideItem19 1.5s 4s ease-in-out forwards;
-  }
-  
-  /* Image styling */
-  .slide-img-19 {
+}
+
+/* Image styling */
+.slide-img-19 {
     width: 500px;
     height: 500px;
     object-fit: contain;
-  }
-  
-  /* Keyframes for the animation */
-  @keyframes slideItem19 {
+}
+
+/* Keyframes for the animation */
+@keyframes slideItem19 {
     0% {
-      opacity: 0;
-      transform: translateY(180px);
+        opacity: 0;
+        transform: translateY(180px);
     }
+
     100% {
-      opacity: 1;
-      /* transform: translate(-50%, -50%) translateY(180px); */
-      transform: translate(0%, -90%) translateY(180px);
+        opacity: 1;
+        /* transform: translate(-50%, -50%) translateY(180px); */
+        transform: translate(0%, -90%) translateY(180px);
     }
-  }
-  
+}
+@media screen and (max-width : 767px){
+    .navbar-collapse{
+    max-height:300px;
+    overflow-y:scroll; 
+    border-top:1px solid #2d2e34;
+    margin-top:15px;
+     }
+    #header .nav-link{
+    font-size:28px;
+    border-bottom:1px solid #2d2e34;
+     }
+    .navbar-light .navbar-toggler{
+    box-shadow:none!important;
+    background:#fff;
+    border:none;
+    border-radius:0;
+     }
+    .drop_1{
+    margin-top:0!important; 
+     }
+    .sticky .drop_1{
+    margin-top:0!important; 
+     }
+    .drop_1 a{
+    font-size:24px; 
+     }
+    .line{
+    margin-left:auto;
+    margin-right:auto; 
+     }
+    
+    #top{
+    display:none; 
+     }
+    #header .navbar-brand{
+    display:block;
+    }
+    .sticky  .navbar-brand{
+    margin-right:0!important; 
+     }
+    .trend_1{
+    text-align:center; 
+     }
+    .trend_1r{
+    text-align:center!important; 
+    margin-top:15px; 
+     }
+    .footer_1i h3{
+    text-align:center; 
+     }
+    .footer_1i h4{
+    text-align:center; 
+     }
+    .footer_1i{
+    margin-top:10px;
+    margin-bottom:10px;
+     }
+    .footer_1i1i img{
+    height:auto; 
+     }
+    .footer_1i ul{
+    text-align:center; 
+     }
+    .footer_1r{
+    margin-top:15px 
+     }
+    .center_o1r {
+    text-align:center!important; 
+     }
+    .center_o1l {
+    text-align:center; 
+     }
+    .pages ul li{
+     margin-bottom:8px;
+     }
+    .pages {
+    text-align:center;
+     }
+    .blog_1r{
+    margin-top:15px  
+     }
+    .blog_1r1  h4{
+    text-align:center; 
+     }
+    .contact_1i{
+    margin-top:10px; 
+    margin-bottom:10px; 
+     }
+    .contact_2r h5{
+     text-align:center;
+     }
+    .contact_2l h4{
+     text-align:center; 
+     }
+    .contact_2l1i .form-control {
+    margin-top:15px;
+    }
+    .contact_2l1i h6{
+     text-align:center;
+     }
+    #stream .trend_2im2 {
+    display:none; 
+     }
+    .trend_1l{
+    text-align:left;
+     }
+    .trend_1r{
+    text-align:right!important;
+    margin-top:0; 
+     }
+     }
+    
+    
+    @media (min-width:576px) and (max-width:767px) {
+    
+     }
+    @media (min-width:768px) and (max-width:991px) {
+    .navbar-expand-md {
+    flex-wrap:wrap!important;
+    }
+    .sticky  .navbar-brand{
+    margin-right:20px!important; 
+     }
+    .sticky .nav-link{
+    padding:10px 10px!important; 
+     }
+    .popular_2i1lm1 img{
+    min-height:240px; 
+     }
+    #stream .trend_2im2 {
+    display:none; 
+     }
+    .contact_1il span{
+    font-size:16px!important; 
+     }
+     }
+    @media (min-width:871px) and (max-width:991px) {
+    .sticky  .navbar-brand{
+    margin-right:40px!important; 
+     }
+    
+     }
+    @media (min-width:992px) and (max-width:1200px) {
+    .navbar-expand-md {
+    flex-wrap:wrap!important;
+    }
+    .sticky  .navbar-brand{
+    margin-right:60px!important; 
+     }
+    .popular_2i1lm1 img{
+    min-height:240px; 
+     }
+    #stream .trend_2im1 img{
+    min-height:200px; 
+     }
+     }
+    @media (min-width:1201px) and (max-width:1255px) {
+    
+     }
