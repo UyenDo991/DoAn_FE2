@@ -1,9 +1,86 @@
+*{
+    box-sizing: border-box;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background: #fff;
 }
+/*********** header ************/
 
+ /*****  header-menu *****/
+ .bg-menu{
+    /* background: rgba(0, 0, 0, .8); */
+ }
+.navbar{
+    margin-bottom: -84px;
+    border-top: 0;
+    position: relative;
+    z-index: 9;
+}
+.navbar-collapse{
+    justify-self: center;
+}
+.navbar .navbar-nav{
+    display: flex;
+    list-style: none;
+}
+.navbar .navbar-nav .nav-link:hover{
+    color: #3f271e;
+}
+.navbar .navbar-nav .nav-link.active {
+    background: #6f3727;
+    border: 1px solid #3f271e;
+    border-radius: 5px;
+    color: #fff;
+}
+.navbar .navbar-nav .nav-link.active:hover{
+    background: #3f271e;
+    border: 1px solid #3f271e;
+    color: #fff;
+}
+.navbar .navbar-nav .nav-link{
+   padding: 10px 20px 10px 20px;
+   color: #fff;
+   font-weight: 600;
+   font-size: 18px;
+   text-decoration: none;
+}
+.navbar .navbar-nav .item-icon{
+    color: #fff;
+    margin-left: 15px;
+}
+.nav-item:hover .item-icon {
+    color: #3e8e41;
+}
+/****** drop menu end*****/
+
+/******** header-Menu end *********/
+/******** Slide Down a Bar on Scroll *********/
+#navbar-menu{
+    position: fixed;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+}
+/******** Slide Down a Bar on Scroll END*********/
+/***** header-menu end *****/
+/*********** header end ************/
+#navbar-toggle {
+    display: none;
+    color: #000;
+    text-align: right;
+    /* padding: 10px; */
+    font-size: 20px;
+    cursor: pointer;
+}
+#navbar-toggle .fa-bars{
+    border: solid 1px #fff ;
+    padding: 8px;
+    color: #fff;
+    font-size: 20px;
+}
 .slider-container {
     position: relative;
     width: 100%;
@@ -145,6 +222,7 @@ body {
     height: 250px;
     object-fit: contain;
     transition: transform 1.5s ease-in-out, opacity 1.5s ease;
+    animation: slideItem4 .5s .8s forwards;
   }
   
   /* Keyframes for the animation */
@@ -163,11 +241,6 @@ body {
       opacity: 1;
       transform: translate(-50%, -50%) rotate(25deg);
     }
-  }
-  
-  /* Trigger the animation on load */
-  .slider-item5.active {
-    animation: slideItem4 .5s .8s forwards;
   }
 /* end item 4 */
 /* item 5 */
@@ -705,7 +778,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
     width: 700px;
-    height: 600px;
+    height: 300px;
     border: 20px solid #ffffff; /* Hoặc sử dụng border-image cho hiệu ứng gradient */
     opacity: 0;
     transition: opacity 1.5s ease, transform 1.5s ease;
@@ -718,7 +791,7 @@ body {
 }
 /* Styling for heading and paragraph */
 .slider-item18 h1 {
-    font-size: 38px;
+    font-size: 30px;
     margin-bottom: 20px;
     font-weight: bold;
     opacity: 0;
