@@ -1,5 +1,8 @@
 // menu
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {
+  myFunction();
+  myAboutUsFunction();
+};
 
 var navbar_sticky = document.getElementById("navbar_sticky");
 var sticky = navbar_sticky.offsetTop;
@@ -37,3 +40,22 @@ function myFunction() {
     sliderItem9.style.transform = `translate(${20}px, ${20}px)  rotate(15deg)`;
   }
 }
+
+function myAboutUsFunction() {
+  var content2_skills = document.querySelectorAll('.content2skills');
+  console.log(content2_skills);
+  var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
+  var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
+  console.log( content2_aboutus_height + navbar_height);
+  console.log( "window.pageYOffset" + window.pageYOffset);
+  if (window.pageYOffset - content2_skills_height  > content2_aboutus_height + navbar_height) {
+      for (var i = 0; i < content2_skills.length; i++) {
+        content2_skills[i].classList.add("content2-skills-bar");
+      }
+  } else {
+      for (var i = 0; i < content2_skills.length; i++) {
+        content2_skills[i].classList.remove("content2-skills-bar");
+      }
+  }
+}
+

@@ -13,10 +13,19 @@ body {
 .navbar {
     width: 100%;
     position: absolute;
-    /* padding-top: 20px;
-    padding-bottom: 20px; */
-    /* background-color: #191a1d; */
+    opacity: 0;
     z-index: 99;
+    animation: AnimationNav 5s ease-in-out forwards;
+}
+
+@keyframes AnimationNav {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 #header .navbar-brand {
@@ -25,6 +34,7 @@ body {
     margin: 0;
     display: none;
 }
+
 .navbar-collapse {
     max-height: 300px;
     /* overflow-y: scroll; */
@@ -32,6 +42,7 @@ body {
     margin-top: 15px;
     justify-content: center;
 }
+
 #header .nav-link {
     position: relative;
     font-size: 18px;
@@ -43,6 +54,7 @@ body {
     display: inline-block;
     transition: color 0.3s ease;
 }
+
 #header .nav-link:before,
 #header .nav-link:after {
     content: '';
@@ -50,15 +62,18 @@ body {
     bottom: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #A594F9, #7371FC);
+    background: linear-gradient(90deg, #04f07a, #afecc8);
     transition: all 0.3s ease;
 }
+
 #header .nav-link:before {
     left: 0;
 }
+
 #header .nav-link:after {
     right: 0;
 }
+
 #header .nav-item:hover .nav-link:before,
 #header .nav-item:hover .nav-link:after {
     width: 100%;
@@ -68,9 +83,10 @@ body {
 #header .nav-item:hover .nav-link {
     color: #c8d3f7;
 }
+
 /* Thêm shadow cho hiệu ứng hover */
 #header .nav-item:hover .nav-link {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     /* Tạo hiệu ứng đổ bóng khi hover */
 }
 
@@ -95,6 +111,7 @@ body {
     display: block !important;
     margin-right: 250px !important;
 }
+
 /* icon */
 .top_1r ul li a {
     background: #28292e;
@@ -317,7 +334,7 @@ a.socialIcon:hover,
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(100px, 100px)  rotate(-30deg);
+    transform: translate(100px, 100px) rotate(-30deg);
     width: 100px;
     height: 100px;
     opacity: 0;
@@ -346,7 +363,7 @@ a.socialIcon:hover,
     left: 50%;
     top: 50%;
     /* transform: translate(-50%, -50%) rotate(-180deg); */
-    transform: translate(100px, 100px)  rotate(-30deg);
+    transform: translate(100px, 100px) rotate(-30deg);
     transition: 3s;
     opacity: 0;
     z-index: 6;
@@ -365,6 +382,7 @@ a.socialIcon:hover,
     0% {
         opacity: 0;
     }
+
     100% {
         left: 30%;
         top: 60%;
@@ -426,7 +444,7 @@ a.socialIcon:hover,
 }
 
 .slider-item6 {
-    transform: translate(100px, 100px)  rotate(-30deg);
+    transform: translate(100px, 100px) rotate(-30deg);
     animation: slideItem6 .5s .8s ease-in-out forwards;
 }
 
@@ -454,7 +472,7 @@ a.socialIcon:hover,
 /* end item 6 */
 /* item 7 */
 .slider-item7 {
-    transform: translate(-120px, 20px)  rotate(0deg);
+    transform: translate(-120px, 20px) rotate(0deg);
     animation: slideItem7 .5s .8s ease-in-out forwards;
 }
 
@@ -475,7 +493,7 @@ a.socialIcon:hover,
 /* end item 7 */
 /* item 8 */
 .slider-item8 {
-    transform: translate(20px, 20px)  rotate(15deg);
+    transform: translate(20px, 20px) rotate(15deg);
     animation: slideItem8 .5s .8s ease-in-out forwards;
 }
 
@@ -500,7 +518,7 @@ a.socialIcon:hover,
     left: 40%;
     z-index: 4;
     opacity: 0;
-    transform: translate(20px, 20px)  rotate(15deg);
+    transform: translate(20px, 20px) rotate(15deg);
     transition: 3s;
     animation: slideItem9 .5s .8s ease-in-out forwards;
 }
@@ -988,7 +1006,11 @@ a.socialIcon:hover,
     font-size: 100%;
 }
 
-.scene, .shape, .face, .face-wrapper, .cr {
+.scene,
+.shape,
+.face,
+.face-wrapper,
+.cr {
     position: absolute;
     transform-style: preserve-3d;
 }
@@ -1005,15 +1027,22 @@ a.socialIcon:hover,
 .shape {
     top: 50%;
     left: 50%;
-    width: 100%;  /* Hoặc giá trị phù hợp với kích thước bạn muốn */
-    height: 100%; /* Hoặc giá trị phù hợp với kích thước bạn muốn */
+    width: 100%;
+    /* Hoặc giá trị phù hợp với kích thước bạn muốn */
+    height: 100%;
+    /* Hoặc giá trị phù hợp với kích thước bạn muốn */
     transform-origin: 50%;
     background-image: url(../images/slider_img_20.png);
-    background-position: center center; /* Căn giữa ảnh */
-    background-size: cover; /* Hoặc 'contain' nếu bạn muốn đảm bảo toàn bộ ảnh hiển thị */
-    background-repeat: no-repeat; /* Không lặp lại ảnh */
-    position: relative; /* Cần thêm để cho lớp phủ có thể được đặt vào đúng vị trí */
+    background-position: center center;
+    /* Căn giữa ảnh */
+    background-size: cover;
+    /* Hoặc 'contain' nếu bạn muốn đảm bảo toàn bộ ảnh hiển thị */
+    background-repeat: no-repeat;
+    /* Không lặp lại ảnh */
+    position: relative;
+    /* Cần thêm để cho lớp phủ có thể được đặt vào đúng vị trí */
 }
+
 .shape::before {
     content: "";
     position: absolute;
@@ -1021,12 +1050,15 @@ a.socialIcon:hover,
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Lớp phủ màu đen với độ trong suốt */
-    z-index: 1; /* Đặt lớp phủ phía trên ảnh */
+    background: rgba(0, 0, 0, 0.5);
+    /* Lớp phủ màu đen với độ trong suốt */
+    z-index: 1;
+    /* Đặt lớp phủ phía trên ảnh */
     transform: translateY(-50%);
 }
 
-.face, .face-wrapper {
+.face,
+.face-wrapper {
     overflow: hidden;
     transform-origin: 0 0;
     backface-visibility: hidden;
@@ -1057,11 +1089,13 @@ a.socialIcon:hover,
     left: 50%;
 }
 
-.cr, .cr .side {
+.cr,
+.cr .side {
     height: 100%;
 }
 
-.cuboid-1.face-top, .cuboid-1 .back {
+.cuboid-1.face-top,
+.cuboid-1 .back {
     width: 100%;
     height: 100%;
 }
@@ -1111,12 +1145,14 @@ a.socialIcon:hover,
     transform: translateZ(-2.5em) rotateY(180deg);
 }
 
-.cub-1 .right-top, .cub-1 .left-top {
+.cub-1 .right-top,
+.cub-1 .left-top {
     width: 10em;
     height: 10em;
 }
 
-.cub-1 .top-padding, .cub-1 .back-magin {
+.cub-1 .top-padding,
+.cub-1 .back-magin {
     width: 25em;
     height: 10em;
 }
@@ -1148,7 +1184,8 @@ a.socialIcon:hover,
 .cub-1 .right-top {
     background-color: rgba(255, 255, 255, 0.3);
 }
-.cub-1 .right-top::before{
+
+.cub-1 .right-top::before {
     content: attr(data-text);
     font-size: 3em;
     text-align: center;
@@ -1161,12 +1198,17 @@ a.socialIcon:hover,
     z-index: 20;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
 
 }
-.cub-1 .face-top::before, .cub-1 .back::before,  .cub-1 .left-top::before, .cub-1 .top-padding::before, .cub-1 .back-magin::before {
+
+.cub-1 .face-top::before,
+.cub-1 .back::before,
+.cub-1 .left-top::before,
+.cub-1 .top-padding::before,
+.cub-1 .back-magin::before {
     content: attr(data-text);
     font-size: 1.2em;
     text-align: center;
@@ -1178,37 +1220,48 @@ a.socialIcon:hover,
     z-index: 20;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Căn giữa theo cả hai chiều */
+    transform: translate(-50%, -50%);
+    /* Căn giữa theo cả hai chiều */
     width: 100%;
     height: 100%;
 }
 
 @keyframes slideItem20 {
-    0%, 15% {
+
+    0%,
+    15% {
         transform: rotateX(0deg) rotateY(0deg);
     }
+
     25% {
         transform: rotateX(0deg) rotateY(-300deg) rotateZ(0deg);
     }
+
     30% {
         transform: rotateX(0deg) rotateY(-270deg) rotateZ(0deg);
     }
+
     45% {
         transform: rotateX(0deg) rotateY(-270deg) rotateZ(0deg);
     }
+
     60% {
         transform: rotateX(300deg) rotateY(-200deg) rotateZ(0deg);
     }
+
     65% {
         transform: rotateX(270deg) rotateY(-180deg) rotateZ(0deg);
     }
+
     90% {
         transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
     }
+
     100% {
         transform: rotateX(0deg) rotateY(0deg);
     }
 }
+
 /* end item 20 */
 /* item 18 */
 /* Slider item */
@@ -1333,62 +1386,255 @@ a.socialIcon:hover,
 }
 
 /************************************** About Us ******************************************/
-.dark-bg{
-    padding-bottom: 150px;
-    background-color: #212121;
+.dark-bg {
+    /* padding-bottom: 150px; */
+    /* background-color: #212121; */
 }
-.content-2-text{
-    border-left: 10px solid #77b6f1;
+
+.content2-text-about-us {
+    text-align: center;
+}
+
+.content2-text-about-us h1 {
+    font-size: 50px;
+    color: #8dc5ab;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-shadow: 0 13.36px 8.896px #b7ddbe, 0 -2px 1px #fff;
+}
+
+.content-2-text {
+    border-left: 10px solid #87f3c1;
     padding-left: 16px !important;
     margin-bottom: 0px !important;
     max-width: 800px;
 }
-.content-2-text h5, .content-2-text h2{
-    color: #fff!important;
+
+.content-2-text h5,
+.content-2-text h2,
+.content-2-title p,
+.content-2-proftlio ul li {
+    color: #686868;
 }
+
+.content-2-proftlio span {
+    color: #8dc5ab;
+}
+
 .content-2-text h5 {
     font-family: 'Playfair Display', serif;
 }
-.content-2-text  h2 {
+
+.content-2-text h2 {
     font-size: 40px;
     font-weight: 700;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
 }
-.content-2-title{
-    margin: 80px;
+
+.content-2-title {
+    margin: 30px 80px;
 }
-.content-2-title p{
+
+.content-2-title p {
     letter-spacing: normal;
     line-height: 24px;
-    color: #f5f5f5;
     font-weight: 400;
     font-family: 'Roboto', sans-serif;
 }
+
 .content-2-title hr.left-line {
     margin: 20px 0 20px 0;
     width: 100px;
 }
+
 .content-2-title .white-bg {
     background-color: #fff !important;
 }
+
 .content-2-title hr {
     border: 0;
     height: 1px;
     width: 100%;
     margin: 20px auto;
 }
+
 .content-2 .content-2-big {
-    margin: 50px;
-    background-image: url(../images/aboutme.jpg);
+    border: 2px solid #8dc5ab;
+    margin-left: 50px;
+}
+
+.content-2 .content-2-big .content-2-img {
+    margin: 20px;
     height: 500px;
     width: 100%;
 }
+
+.content-2-proftlio {
+    display: flex;
+    letter-spacing: normal;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.content-2-proftlio ul {
+    list-style: circle;
+}
+
+/******************content2-text-skills***********************/
+.content2-text-skills {
+    margin-left: 50px;
+}
+
+.content2-text-skills h5 {
+    font-size: 30px;
+    color: #8dc5ab;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-shadow: 0 13.36px 8.896px #b7ddbe, 0 -2px 1px #fff;
+}
+
+.content2-text-skills-1 {
+    margin: 0 50px;
+}
+
+.content2-skills-bar {
+    margin: 20px 0;
+}
+
+.content2-skills-bar:first-child {
+    margin-top: 0px;
+}
+
+.content2-skills-info {
+    margin-bottom: 5px;
+}
+
+.content2-skills-info span {
+    font-weight: 500;
+    font-size: 17px;
+    opacity: 0;
+    animation: showSkillsText 0.5s 1s linear forwards;
+}
+
+@keyframes showSkillsText {
+    100% {
+        opacity: 1;
+    }
+}
+.content2-skills-bar .progress-line {
+    height: 10px;
+    width: 100%;
+    background: #f0f0f0;
+    position: relative;
+    transform: scaleX(0);
+    transform-origin: left;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
+        0 1px rgba(255, 255, 255, 0.8);
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.content2-skills-bar .progress-line span {
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #759176;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.content2-skills-bar .progress-line span::before {
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #000;
+    animation: showText2 0.5s linear forwards;
+}
+
+.content2-skills-bar .progress-line span::after {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    font-weight: 500;
+    background: #000;
+    color: #fff;
+    opacity: 0;
+    padding: 1px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+.content2-skills-bar .html span {
+    width: 84%;
+}
+.content2-skills-bar .css span {
+    width: 92%;
+}
+.content2-skills-bar .javaScript span {
+    width: 85%;
+}
+.content2-skills-bar .java span {
+    width: 60%;
+}
+.content2-skills-bar .vuejs span {
+    width: 80%;
+}
+.content2-skills-bar .php span {
+    width: 80%;
+}
+.content2-skills-bar .aspnet span {
+    width: 60%;
+}
+.content2-skills-bar .office span {
+    width: 90%;
+}
+
+
+@keyframes showText2 {
+    100% {
+        opacity: 1;
+    }
+}
+.html span::after {
+    content: "84%";
+}
+.css span::after {
+    content: "92%";
+}
+.javaScript span::after {
+    content: "85%";
+}
+.java span::after {
+    content: "60%";
+}
+.vuejs span::after {
+    content: "80%";
+}
+.php span::after {
+    content: "75%";
+}
+.aspnet span::after {
+    content: "60%";
+}
+.office span::after {
+    content: "90%";
+}
 /**************************************End About Us ******************************************/
-
-
-
-
-
 
 /* Keyframes for the animation */
 @keyframes slideItem19 {
@@ -1444,23 +1690,27 @@ a.socialIcon:hover,
         margin-right: 0 !important;
     }
 }
+
 @media (min-width:350px) and (max-width:576px) {
     .navbar {
         background-color: #191a1d;
         z-index: 99;
     }
+
     .navbar-light .navbar-toggler {
         margin-left: 50%;
-    } 
+    }
 }
+
 @media (min-width:576px) and (max-width:767px) {
     .navbar {
         background-color: #191a1d;
         z-index: 99;
     }
+
     .navbar-light .navbar-toggler {
         margin-left: 50%;
-    } 
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -1499,7 +1749,8 @@ a.socialIcon:hover,
 @media (max-width: 350px) {
     .navbar-light .navbar-toggler {
         margin-left: 15%;
-    } 
+    }
+
     .slider-item1-shape {
         height: 300px;
     }
@@ -1543,4 +1794,25 @@ a.socialIcon:hover,
     .slider-item17 {}
 
     .slider-item18 {}
+}
+
+/* Media Query */
+/* For tablet */
+@media screen and (max-width:900px) {
+    .content2-text-about-us h5 {
+        font-size: 3rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 3px 4px black;
+    }
+}
+
+/* For mobile Skills*/
+@media screen and (max-width :600px) {
+    .content2-text-about-us h5 {
+        font-size: 2rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 3px 4px black;
+    }
 }
