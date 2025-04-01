@@ -1021,7 +1021,7 @@ a.socialIcon:hover,
     top: 40%;
     left: 50%;
     margin: -40em 0 0 -40em;
-    animation: slideItem20 5s infinite;
+    animation: slideItem20 5s ease infinite;
 }
 
 .shape {
