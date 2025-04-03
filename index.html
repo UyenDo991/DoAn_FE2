@@ -23,12 +23,17 @@
             position: absolute;
             inset: 0;
             background-position: center;
-            background-image: url('assets/images/anhtest.png');
+            background-image: url('assets/images/anhnen.jpg');
             background-size: cover;
-            z-index: 1;
-            transition: transform 7s ease-in-out, opacity 3s 1s linear;
+            z-index: 0;
+            transition: transform 9s ease-in-out, opacity 5s 1s linear;
         }
-
+        .img-2{
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .3);
+            z-index: 1;
+        }
         /* Thêm lớp văn bản */
         .title-content {
             margin-top: 20px;
@@ -40,54 +45,81 @@
             color: white;
             font-family: 'Baloo Paaji', cursive;
             z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 7px 5px 4px rgba(0, 0, 0, 0.5);
             transition: opacity 3s ease-in-out;
         }
-
         .title-content .header-title .up {
-            font-size: calc(30px +(60 - 30)*((100vw - 300px) /(1300 - 300)));
+            /* font-size: calc(30px +(60 - 30)*((100vw - 300px) /(1300 - 300)));
             font-weight: 500;
             margin-bottom: 5px;
             position: relative;
+            display: block; */
+
+            font-size: calc(30px +(60 - 30)*((100vw - 300px) /(1300 - 300)));
+            /* font-size: 75px; */
+            margin-bottom: 5px;
+            -webkit-text-stroke-width: 4px;
+            -webkit-text-stroke-color: transparent;
+            font-weight: 500;
+            color: #ffffff;
+            font-family: cursive;
+            background: linear-gradient(0deg, #00e7ff, #ff00d4);
+            -webkit-background-clip: text;
+            background-clip: text;
             display: block;
         }
 
         .title-content .header-title .down {
-            font-size: calc(30px +(75 - 30)*((100vw - 300px) /(1300 - 300)));
+            /* font-size: calc(30px +(75 - 30)*((100vw - 300px) /(1300 - 300)));
             margin-bottom: 0;
             position: relative;
+            display: block; */
+            font-size: calc(30px +(75 - 30)*((100vw - 300px) /(1300 - 300)));
+            margin-bottom: 5px;
+            -webkit-text-stroke-width: 4px;
+            -webkit-text-stroke-color: transparent;
+            font-weight: 500;
+            color: #ffffff;
+            font-family: cursive;
+            background: linear-gradient(0deg, #00e7ff, #ff00d4);
+            -webkit-background-clip: text;
+            background-clip: text;
             display: block;
         }
-
+        .title-content .header-title , .title-content .header-subtitle, .codepro-custom-btn{
+            animation: animationText 2s ease-in-out forwards;
+        }
+        @keyframes animationText {
+            0% {
+               transform: translate(-80%, -80%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+               transform: translate(0, 0) scale(1);
+               opacity: 1;
+            }
+        }
+        .title-content .header-subtitle{
+            margin-bottom: 5px;
+            -webkit-text-stroke-width: 4px;
+            -webkit-text-stroke-color: transparent;
+            /* font-weight: 500; */
+            color: #ffffff;
+            font-family: cursive;
+            background: linear-gradient(0deg, #00e7ff, #ff00d4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            display: block;
+        }
         .title-content .btn {
             position: relative;
             margin-top: 20px;
             border-radius: 20px;
             padding: 8px 15px;
         }
-
-        .btn {
-            display: inline-block;
-            font-weight: 400;
-            color: #212529;
-            text-align: center;
-            vertical-align: middle;
-            background-color: transparent;
-            border: 1px solid transparent;
-            padding: .375rem .75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: .1rem;;
-        }
-
         .btn-click {
             color: #fff;
             background-color: #695aa6;
-            border-color: #695aa6;
-        }
-        .btn-click:hover {
-            color: #e20404;
-            background-color: #fafafa;
             border-color: #695aa6;
         }
         /******/
@@ -115,13 +147,6 @@
             padding: 0;
             border: none;
         }
-
-        .btn-click:hover {
-            color: #e20404;
-            background-color: #fafafa;
-            border-color: #695aa6;
-        }
-
         .codepro-btn-8:before {
             height: 0%;
             width: 2px;
@@ -136,37 +161,28 @@
             background: #c797eb;
             transition: all 0.3s ease;
         }
-
         .codepro-btn-8:after {
             width: 0%;
             height: 2px;
         }
-
-        .codepro-btn-8:before,
-        .codepro-btn-8:after {
-            position: absolute;
-            content: "";
-            right: 0;
-            bottom: 0;
-            background: #c797eb;
-            transition: all 0.3s ease;
+        .codepro-btn-8:hover:before {
+            height: 100%;
         }
-
+        .codepro-btn-8:hover:after {
+            width: 100%;
+        }
         .codepro-btn-8:hover {
             background: transparent;
         }
-
         .codepro-btn-8 span {
             position: relative;
             display: block;
-            width: 100%;
-            height: 100%;
+            font-weight: 750;
         }
-
+        
         .codepro-btn-8 span:hover:before {
             height: 100%;
         }
-
         .codepro-btn-8 span:before {
             width: 2px;
             height: 0%;
@@ -183,7 +199,7 @@
         }
 
         .codepro-btn-8 span:hover {
-            color: #c797eb;
+            /* color: #c797eb; */
         }
 
         .codepro-btn-8 span:hover:after {
@@ -193,19 +209,7 @@
         .codepro-btn-8 span:after {
             height: 2px;
             width: 0%;
-        }
-
-        .codepro-btn-8 span:before,
-        .codepro-btn-8 span:after {
-            position: absolute;
-            content: "";
-            left: 0;
-            top: 0;
-            background: #c797eb;
-            transition: all 0.3s ease;
-        }
-	
-            
+        } 
         /********/
 
     </style>
@@ -217,10 +221,10 @@
         <div class="title-content">
             <h1 class="header-title"><span class="up">HI!</span> <span class="down">I am Thao Uyen</span></h1>
             <p class="header-subtitle">DEVELOPER WEBSITE</p>
-            <button class="codepro-custom-btn codepro-btn-8"><span>Visit My Portfolio</span></button>
-            <button class="btn btn-click">Visit My Portfolio</button>
+            <button class="codepro-custom-btn codepro-btn-8 btn-click"><span>Visit My Portfolio</span></button>
         </div>
         <div class="img-1"></div>
+        <div class="img-2"></div>
     </div>
 
     <script>
