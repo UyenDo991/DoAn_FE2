@@ -13,8 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PJderthaw&family=Montez&family=Pacifico&display=swap"
-        rel="stylesheet">
-
+        rel="stylesheet">  
 </head>
 
 <body>
@@ -62,7 +61,7 @@
     <!--== Header End ==-->
     <!-- Slider -->
     <div class="slider-container" id="home">
-        <img src="assets/images/anhme_bg.jpg" alt="Background Image" class="slider-bg" />
+        <img src="assets/images/anhme_bg.jpg" alt="modal-background Image" class="slider-bg" />
         <!-- <div class="slider-bg-2"></div> -->
         <!-- ITEM - 1 -->
         <div class="slider-item1">
@@ -171,7 +170,7 @@
                     <div class="face face-top" data-text="MSSV: 22211TT3071">
                         <div class="photon-shader"></div>
                     </div>
-                    <div class="face back" data-text="Thảo Uyên">
+                    <div class="face modal-back" data-text="Thảo Uyên">
                         <div class="photon-shader"></div>
                     </div>
                     <div class="face right-top" data-text="Thảo Uyên">
@@ -180,7 +179,7 @@
                     <div class="face left-top" data-text="HTML -  CSS ">
                         <div class="photon-shader"></div>
                     </div>
-                    <div class="face back-magin" data-text="FE2- HTML - CSS">
+                    <div class="face modal-back-magin" data-text="FE2- HTML - CSS">
                         <div class="photon-shader"></div>
                     </div>
                     <div class="face top-padding" data-text="Thảo Uyên">
@@ -328,7 +327,7 @@
                                     <p class="card-content">
                                         Coffee Shop Website – Built with HTML, CSS, and JavaScript.
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore" id="fe">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -345,7 +344,7 @@
                                     <p class="card-content">
                                         Movie Review Website – Built with HTML, CSS, JavaScript, Vue.js, and OMB-Database.
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore" id="fe2">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -362,7 +361,7 @@
                                     <p class="card-content">
                                         Warehouse Management Software - Built with iOS
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -379,7 +378,7 @@
                                     <p class="card-content">
                                         Puzzle Game – Built with Java. Build a New Game Based on Player Preferences
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -398,7 +397,7 @@
                                     <p class="card-content">
                                         SUNSHINE E-Commerce Website – Built with HTML, CSS, Js, Jquery, PHP-Laravel,..
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -415,7 +414,7 @@
                                     <p class="card-content">
                                         E-Commerce Website – Built with MWC Framework and SQL Server Database
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -432,7 +431,7 @@
                                     <p class="card-content">
                                         Participated in the Internship at ABS Vietnam-America Company.
                                     </p>
-                                    <span class="see-more">See More</span>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -449,7 +448,7 @@
                                     <p class="card-content">
                                         Participated in the Graduation Internship at Ari Technology Joint Stock Company.
                                     </p>
-                                    <button class="see-more">See More</button>
+                                    <span class="btnSeeMore">See More</span>
                                   </div>
                                   <div class="date-box">
                                     <span class="month">PJ</span>
@@ -464,7 +463,128 @@
         </div>
     </div>
     <!------------ End PROJECT -------------->
-
+    <!-- Pop up -->
+     <div id="wrapper">
+        <h1>Tạo Modal với html, css, javascript</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident cupiditate temporibus porro repellat fuga aliquid ea, qui quisquam? Iste vel omnis distinctio harum quo libero, consequatur nesciunt incidunt atque rerum!</p>
+        <button id="btn-open">Click Here Show Modal</button>
+        <p>Optio perferendis, vel, ea incidunt modi nemo repellat iste facere, quibusdam perspiciatis quas! Dolorem quis sit, amet, quod in, incidunt earum inventore provident natus quos quidem exercitationem assumenda distinctio. Quam!</p>
+        <p>Amet quae ratione voluptatem, quibusdam tenetur sed, cupiditate recusandae assumenda nam esse quo, quidem labore mollitia quod! Obcaecati nisi placeat maxime corrupti, veniam consequatur aliquam voluptatibus. Eligendi ducimus illo sit.</p>
+        
+        <div id="content-modal-fe">
+            <button id="prev-btn">
+                <i class="fa fa-caret-left"></i>
+            </button>
+            <!-- Book -->
+            <div id="modal-book" class="modal-book">
+                <!-- modal-paper 1 -->
+                <div id="p1" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f1" class="modal-front-content">
+                            <h1>BE2</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b1" class="modal-back-content">
+                            <h1>modal-back 1</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal-paper 2 -->
+                <div id="p2" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f2" class="modal-front-content">
+                            <h1>modal-front 2</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b2" class="modal-back-content">
+                            <h1>modal-back 2</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal-paper 3 -->
+                <div id="p3" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f3" class="modal-front-content">
+                            <h1>modal-front 3</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b3" class="modal-back-content">
+                            <h1>modal-back 3</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <button class="squishy squishy-neon btnClose">Close</button>
+            
+            <!-- <button class="btnClose"><a href=""><span>Close</span></a></button> -->
+            <!-- Next Button -->
+            <button id="next-btn">
+                <i class="fa fa-caret-right"></i>
+                <!-- <i class="fa fa-arrow-circle-right"></i> -->
+            </button>
+        </div>
+        
+        <div id="content-modal-fe2">
+            <button id="prev-btn">
+                <i class="fa fa-caret-left"></i>
+            </button>
+            <!-- Book -->
+            <div id="modal-book" class="modal-book">
+                <!-- modal-paper 1 -->
+                <div id="p1" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f1" class="modal-front-content">
+                            <h1>FE2222</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b1" class="modal-back-content">
+                            <h1>modal-back 1</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal-paper 2 -->
+                <div id="p2" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f2" class="modal-front-content">
+                            <h1>modal-front 2</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b2" class="modal-back-content">
+                            <h1>modal-back 2</h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal-paper 3 -->
+                <div id="p3" class="modal-paper">
+                    <div class="modal-front">
+                        <div id="f3" class="modal-front-content">
+                            <h1>modal-front 3</h1>
+                        </div>
+                    </div>
+                    <div class="modal-back">
+                        <div id="b3" class="modal-back-content">
+                            <h1>modal-back 3</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="squishy squishy-neon btnClose">Close</button>
+            <!-- Next Button -->
+            <button id="next-btn">
+                <i class="fa fa-caret-right"></i>
+                <!-- <i class="fa fa-arrow-circle-right"></i> -->
+            </button>
+        </div>
+        
+    </div>
+    <!-- End Pup up -->
     <!-- Footer -->
     <footer>
         <div class="container">
