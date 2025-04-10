@@ -76,7 +76,7 @@ let checkIDModal = 0;
 btnSeeMore.forEach(element => {
     element.addEventListener('click', function () {
         checkIDModal = element.id;
-        showSlides_Content_6(checkIDModal);
+        showSlides_Content_3(checkIDModal);
     });
 });
 
@@ -96,20 +96,23 @@ let numOfPapers = 0;
 let maxLocation = 0;
 
 // Hiển thị modal + thiết lập lật trang
-function showSlides_Content_6(checkIDModal) {
+function showSlides_Content_3(checkIDModal) {
     const modal_container = document.getElementById(`content-modal-${checkIDModal}`);
     if (!modal_container) return;
-
     modal_container.classList.add('show');
     currentLocation = 1;
     numOfPapers = 3;
     maxLocation = numOfPapers + 1;
 
     setupBookNavigation(modal_container);
+    slideShowContent3(modal_container);
 }
 
 // Cài đặt nút Prev / Next
 function setupBookNavigation(modal_container) {
+    
+     console.log('modal_container1111');
+     console.log(modal_container);
     const prevBtn = modal_container.querySelector("#prev-btn");
     const nextBtn = modal_container.querySelector("#next-btn");
     const book = modal_container.querySelector("#modal-book");
@@ -118,6 +121,8 @@ function setupBookNavigation(modal_container) {
     const paper2 = modal_container.querySelector("#p2");
     const paper3 = modal_container.querySelector("#p3");
 
+    const showModalText = modal_container.querySelector(".content-3-modal-box");
+    console.log(showModalText);
     // Xóa sự kiện cũ trước khi thêm mới (tránh đè)
     prevBtn.replaceWith(prevBtn.cloneNode(true));
     nextBtn.replaceWith(nextBtn.cloneNode(true));
@@ -133,12 +138,14 @@ function setupBookNavigation(modal_container) {
                     paper1.classList.remove("modal-flipped");
                     paper1.style.zIndex = 3;
                     break;
+                // case 3:
+                //     paper2.classList.remove("modal-flipped");
+                //     paper2.style.zIndex = 2;
+                //     break;
                 case 3:
+                    openBook(book);
                     paper2.classList.remove("modal-flipped");
                     paper2.style.zIndex = 2;
-                    break;
-                case 4:
-                    openBook(book);
                     paper3.classList.remove("modal-flipped");
                     paper3.style.zIndex = 1;
                     // paper3.style.transform = "translateX(0px)";
@@ -155,15 +162,17 @@ function setupBookNavigation(modal_container) {
                     openBook(book);
                     paper1.classList.add("modal-flipped");
                     paper1.style.zIndex = 1;
-
+                    showModalText.classList.add('showAnimationText');
                     break;
+                // case 2:
+                //     paper2.classList.add("modal-flipped");
+                //     paper2.style.zIndex = 2;
+                //     break;
                 case 2:
-                    paper2.classList.add("modal-flipped");
-                    paper2.style.zIndex = 2;
-                    break;
-                case 3:
                     paper3.classList.add("modal-flipped");
-                    paper3.style.zIndex = 3;
+                    paper2.classList.add("modal-flipped");
+                    paper2.style.zIndex = 3;
+                    paper3.style.zIndex = 2;
                     // paper3.style.transform = "translateX(-50px)";
                     closeBook(false, book);
                     break;
@@ -194,6 +203,7 @@ function resetBook(modal_container) {
     const book = modal_container.querySelector("#modal-book");
     const papers = modal_container.querySelectorAll(".modal-paper");
     const paper1 = modal_container.querySelector("#p1"); 
+    const showModalText = modal_container.querySelector(".content-3-modal-box");
 
     book.style.transform = "translateX(0%)";
     papers.forEach(paper => {
@@ -203,6 +213,47 @@ function resetBook(modal_container) {
 
     });
     paper1.style.zIndex = 3;
+    showModalText.classList.remove('showAnimationText');
     
     currentLocation = 1;
 }
+
+//
+//ảnh
+const mainPhoto  = document.querySelector('.img-bg-f2');
+
+let iMaxInge = 5; // số lượng ảnh tối đa
+function slideShowContent3(modal_container) {
+    const imageElement = modal_container.querySelector(".img-bg-f2");
+    if (!imageElement) return;
+
+    const basePath = imageElement.getAttribute("data-base-src"); // ví dụ: "assets/images/xxx"
+
+    if (!basePath) {
+        console.error("Missing data-base-src attribute");
+        return;
+    }
+
+    if (i > iMaxInge) {
+        i = 1; // reset về ảnh đầu
+    }
+
+    const link_name = `${basePath}${i}.jpg`; // Ví dụ: "assets/images/xxx1.jpg"
+    imageElement.setAttribute("src", link_name);
+
+    i++;
+
+    slideshowTimeout = setTimeout(() => slideShowContent3(modal_container), 1000);
+}
+// function slideshow(n) {
+//     let i;
+//     let _number_from = n; 
+//     let _number_to = 3 + Number(n); 
+//     let slides_content_6 = document.querySelectorAll(".slide-content-6");
+//     for (i = 0; i < slides_content_6.length; i++) {
+//         slides_content_6[i].style.display = "none";  //ẩn
+//     }
+//     for (i = _number_from; i <= _number_to; i++) {
+//         slides_content_6[i].style.display = "block";  //hiện
+//     }
+// }
