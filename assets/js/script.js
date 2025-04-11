@@ -7,6 +7,9 @@ window.onscroll = function() {
 var navbar_sticky = document.getElementById("navbar_sticky");
 var sticky = navbar_sticky.offsetTop;
 var navbar_height = document.querySelector('.navbar').offsetHeight;
+const btnBackToTop = document.querySelector(".backToTop");
+
+
 
 function myFunction() {
     const sliderContainer = document.querySelector('.slider-container');
@@ -23,6 +26,7 @@ function myFunction() {
 
   if (window.pageYOffset >= sticky + navbar_height) {
     navbar_sticky.classList.add("sticky");
+    btnBackToTop.style.display = "block";
     document.body.style.paddingTop = navbar_height + 'px';
     sliderItem3.style.transform = `translate(${100}px, ${100}px)  rotate(-30deg)`;
     sliderItem4.style.transform = `translate(${100}px, ${100}px)  rotate(-30deg)`;
@@ -36,6 +40,7 @@ function myFunction() {
   } else {
     navbar_sticky.classList.remove("sticky");
     document.body.style.paddingTop = '0';
+    btnBackToTop.style.display = "none";
     sliderItem3.style.transform = `translate(${80}px, ${80}px)  rotate(-30deg)`;
     sliderItem4.style.transform = `translate(${80}px, ${80}px)  rotate(-30deg)`;
     sliderItem5.style.transform = `translate(${100}px, ${100}px)  rotate(-180deg)`;
@@ -64,7 +69,11 @@ function myAboutUsFunction() {
       }
   }
 }
-
+//Button Back To Top
+btnBackToTop.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
 
 // Modal
 const btnSeeMore = document.querySelectorAll('.btnSeeMore');
@@ -110,18 +119,19 @@ function showSlides_Content_3(checkIDModal) {
 
 // Cài đặt nút Prev / Next
 function setupBookNavigation(modal_container) {
-    
-     console.log('modal_container1111');
      console.log(modal_container);
     const prevBtn = modal_container.querySelector("#prev-btn");
     const nextBtn = modal_container.querySelector("#next-btn");
     const book = modal_container.querySelector("#modal-book");
+
 
     const paper1 = modal_container.querySelector("#p1");
     const paper2 = modal_container.querySelector("#p2");
     const paper3 = modal_container.querySelector("#p3");
 
     const showModalText = modal_container.querySelector(".content-3-modal-box");
+    prevBtn.style.display = "block";
+    nextBtn.style.display = "block";
     console.log(showModalText);
     // Xóa sự kiện cũ trước khi thêm mới (tránh đè)
     prevBtn.replaceWith(prevBtn.cloneNode(true));
@@ -203,15 +213,24 @@ function resetBook(modal_container) {
     const book = modal_container.querySelector("#modal-book");
     const papers = modal_container.querySelectorAll(".modal-paper");
     const paper1 = modal_container.querySelector("#p1"); 
+    const paper2 = modal_container.querySelector("#p2"); 
+    const paper3 = modal_container.querySelector("#p3"); 
     const showModalText = modal_container.querySelector(".content-3-modal-box");
+    const prevBtn = modal_container.querySelector("#prev-btn");
+    const nextBtn = modal_container.querySelector("#next-btn");
+    
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
 
     book.style.transform = "translateX(0%)";
     papers.forEach(paper => {
         paper.classList.remove("modal-flipped");
-        paper.style.zIndex = 0;
+        // paper.style.zIndex = 0;
         paper.style.transform = "translateX(0%)";
 
     });
+    paper3.style.zIndex = 1;
+    paper2.style.zIndex = 2;
     paper1.style.zIndex = 3;
     showModalText.classList.remove('showAnimationText');
     
@@ -245,15 +264,3 @@ function slideShowContent3(modal_container) {
 
     slideshowTimeout = setTimeout(() => slideShowContent3(modal_container), 1000);
 }
-// function slideshow(n) {
-//     let i;
-//     let _number_from = n; 
-//     let _number_to = 3 + Number(n); 
-//     let slides_content_6 = document.querySelectorAll(".slide-content-6");
-//     for (i = 0; i < slides_content_6.length; i++) {
-//         slides_content_6[i].style.display = "none";  //ẩn
-//     }
-//     for (i = _number_from; i <= _number_to; i++) {
-//         slides_content_6[i].style.display = "block";  //hiện
-//     }
-// }
