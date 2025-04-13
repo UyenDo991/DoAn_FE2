@@ -2,6 +2,9 @@
 window.onscroll = function() {
   myFunction();
   myAboutUsFunction();
+  myProjectFunction();
+  revealOnScroll();
+  revealInternship();
 };
 
 var navbar_sticky = document.getElementById("navbar_sticky");
@@ -47,16 +50,16 @@ function myFunction() {
     sliderItem6.style.transform = `translate(${80}px, ${80}px)  rotate(-30deg)`;
     sliderItem7.style.transform = `translate(${-100}px, ${20}px)  rotate(0deg)`;
     sliderItem8.style.transform = `translate(${20}px, ${20}px)  rotate(15deg)`;
-    sliderItem9.style.transform = `translate(${20}px, ${20}px)  rotate(15deg)`;
+    sliderItem9.style.transform = `translate(${20}px, ${20}px)  rotate(50deg)`;
     // sliderItem20.style.transform = `translate(${20}px, ${20}px)  rotate(15deg)`;
   }
 }
 
+var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
+var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
 function myAboutUsFunction() {
   var content2_skills = document.querySelectorAll('.content2skills');
   //console.log(content2_skills);
-  var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
-  var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
   //console.log( content2_aboutus_height + navbar_height);
   //console.log( "window.pageYOffset" + window.pageYOffset);
   if (window.pageYOffset - content2_skills_height  > content2_aboutus_height + navbar_height) {
@@ -69,6 +72,59 @@ function myAboutUsFunction() {
       }
   }
 }
+function myProjectFunction() {
+    var content3_show = document.querySelectorAll('.parent');
+    var triggerBottom = window.innerHeight * 0.9; // khi phần tử chạm 90% chiều cao màn hình
+
+    content3_show.forEach(function (item) {
+        var box = item.getBoundingClientRect();
+        if (box.top < triggerBottom) {
+            item.classList.add("show");
+        } else {
+            item.classList.remove("show");
+        }
+    });
+}
+// function myExperienceFunction() {
+//   var content4_show = document.querySelectorAll('.content-4-box');
+//   var triggerBottom = window.innerHeight * 0.9; // khi phần tử chạm 90% chiều cao màn hình
+
+//   content4_show.forEach(function (item) {
+//       var box = item.getBoundingClientRect();
+//       if (box.top < triggerBottom) {
+//           item.classList.add("show");
+//       } else {
+//           item.classList.remove("show");
+//       }
+//   });
+// }
+ function revealOnScroll() {
+    const elements = document.querySelectorAll('.content-4-big');
+    const triggerBottom = window.innerHeight * 0.9;
+  
+    elements.forEach((el) => {
+      const boxTop = el.getBoundingClientRect().top;
+  
+      if (boxTop < triggerBottom) {
+        el.classList.add('appear');
+      } else {
+        el.classList.remove('appear');
+      }
+    });
+  }
+  function revealInternship() {
+    const cards = document.querySelectorAll('.slide-in-left, .slide-in-right');
+    const triggerBottom = window.innerHeight * 0.85;
+  
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      if (cardTop < triggerBottom) {
+        card.classList.add('show');
+      } else {
+        card.classList.remove('show');
+      }
+    });
+  }
 //Button Back To Top
 btnBackToTop.addEventListener('click', () => {
     document.body.scrollTop = 0;
