@@ -55,26 +55,44 @@ function myFunction() {
   }
 }
 
-var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
-var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
+//var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
+//var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
 function myAboutUsFunction() {
-  var content2_skills = document.querySelectorAll('.content2skills');
+ // var content2_skills = document.querySelectorAll('.content2skills');
   //console.log(content2_skills);
   //console.log( content2_aboutus_height + navbar_height);
   //console.log( "window.pageYOffset" + window.pageYOffset);
-  if (window.pageYOffset - content2_skills_height  > content2_aboutus_height + navbar_height) {
-      for (var i = 0; i < content2_skills.length; i++) {
-        content2_skills[i].classList.add("content2-skills-bar");
-      }
-  } else {
-      for (var i = 0; i < content2_skills.length; i++) {
-        content2_skills[i].classList.remove("content2-skills-bar");
-      }
-  }
+  // if (window.pageYOffset - content2_skills_height  > content2_aboutus_height + navbar_height) {
+  //     for (var i = 0; i < content2_skills.length; i++) {
+  //       content2_skills[i].classList.add("content2-skills-bar");
+  //     }
+  // } else {
+  //     for (var i = 0; i < content2_skills.length; i++) {
+  //       content2_skills[i].classList.remove("content2-skills-bar");
+  //     }
+  // }
+    const observerContent2 = new IntersectionObserver(entries =>{
+        entries.forEach(e =>{
+            const content2skills = e.target.querySelectorAll('.content2skills');
+            if(e.isIntersecting){
+              content2skills.forEach(element => {
+                element.classList.add('content2-skills-bar');
+              });
+              return;
+            }
+            content2skills.forEach(element => {
+              element.classList.remove('content2-skills-bar');
+            });
+        });
+    });
+    const content2_skills = document.querySelectorAll('#content2-skills');
+    content2_skills.forEach(e =>{
+      observerContent2.observe(e);
+    });
 }
 function myProjectFunction() {
     var content3_show = document.querySelectorAll('.parent');
-    var triggerBottom = window.innerHeight * 0.9; // khi phần tử chạm 90% chiều cao màn hình
+    var triggerBottom = window.innerHeight * 0.9; 
 
     content3_show.forEach(function (item) {
         var box = item.getBoundingClientRect();
@@ -84,20 +102,29 @@ function myProjectFunction() {
             item.classList.remove("show");
         }
     });
-}
-// function myExperienceFunction() {
-//   var content4_show = document.querySelectorAll('.content-4-box');
-//   var triggerBottom = window.innerHeight * 0.9; // khi phần tử chạm 90% chiều cao màn hình
 
-//   content4_show.forEach(function (item) {
-//       var box = item.getBoundingClientRect();
-//       if (box.top < triggerBottom) {
-//           item.classList.add("show");
-//       } else {
-//           item.classList.remove("show");
-//       }
-//   });
-// }
+  //   const observerContent3 = new IntersectionObserver(entries =>{
+  //     entries.forEach(e =>{
+  //         const content3_show = e.target.querySelectorAll('.parent');
+  //         if(e.isIntersecting){
+  //           content3_show.forEach(element => {
+  //             element.classList.add('show');
+  //           });
+  //           return;
+  //         }
+  //         content3_show.forEach(element => {
+  //           element.classList.remove('show');
+  //         });
+  //     });
+  // });
+  // const content3_project = document.querySelectorAll('.content-3-projects');
+  // content3_project.forEach(e =>{
+  //   observerContent3.observe(e);
+  // });
+
+
+
+}
  function revealOnScroll() {
     const elements = document.querySelectorAll('.content-4-big');
     const triggerBottom = window.innerHeight * 0.9;

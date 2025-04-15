@@ -467,7 +467,9 @@ a.socialIcon:hover,
     max-width: 510px;
     height: auto;
 }
-
+.slider-item7 img {
+    width: 40%;
+}
 /* Animation for Image Layers */
 @keyframes slideItem6 {
     0% {
@@ -498,7 +500,7 @@ a.socialIcon:hover,
 
     100% {
         opacity: 1;
-        top: 5%;
+        top: 10%;
         left: 60%;
         /* transform: translateY(0) rotate(0deg); */
     }
@@ -946,7 +948,7 @@ a.socialIcon:hover,
 /* item 17 */
 .slider-item17 {
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     /* Vừa căn giữa vừa xoay */
@@ -967,7 +969,7 @@ a.socialIcon:hover,
 
     100% {
         opacity: 1;
-        top: 70%;
+        top: 30%;
         left: 70%;
         transform: translate(-50%, -50%) rotate(45deg);
         /* Cuối cùng là xuất hiện và xoay 45 độ */
@@ -1440,8 +1442,8 @@ a.socialIcon:hover,
     line-height: 90px;
 }
 
-.title-content .header-title .up,
-.title-content .header-title .down {
+.title-content .header-title .up .text,
+.title-content .header-title .down .text{
     margin-bottom: 5px;
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: transparent;
@@ -1455,33 +1457,70 @@ a.socialIcon:hover,
 }
 
 .title-content .header-title .up {
+    display: flex;  
     font-size: 50px;
 }
 
 .title-content .header-title .down {
+    display: flex;
     font-size: 60px;
 }
 
-.title-content .header-title,
-.title-content .header-subtitle,
-.codepro-custom-btn {
+/* .title-content .header-title .up {
     opacity: 0;
     animation: animationText 2s 2s ease-in-out forwards;
+} */
+.codepro-custom-btn {
+    opacity: 0;
+    animation: animationText 1s 5s ease-in-out forwards;
+}
+.title-content .header-title .down {
+    opacity: 0;
+    animation: animationText_1 2s 5s forwards;
+    animation-delay: var(--delay);
 }
 
+.title-content .header-title .up .text, .title-content .header-title .down .text, .title-content .header-subtitle .text{
+    opacity: 0;
+    animation:  animationText_2 .5s 3s ease-in-out forwards, animationText_1 .5s 3s ease-in-out forwards;
+    animation-delay: var(--delay);
+}
 @keyframes animationText {
     0% {
-        transform: translate(-150%, -150%) scale(0.5);
+        transform: translate(50px, 50px) scale(0.5);
         opacity: 0;
     }
 
     100% {
-        transform: translate(0, 0) scale(1);
+        transform: scale(1);
         opacity: 1;
     }
 }
-
-.title-content .header-subtitle {
+@keyframes animationText_1 {
+    0%{ opacity: 0; }
+    80%{ opacity: 1; transform: scale(1.3); }
+    100%{ opacity: 1; }
+}
+@keyframes animationText_2 {
+  0% { opacity: 0; }
+  5% { opacity: .4;}
+  10% { opacity: 0;}
+  15% { opacity: .55;}
+  20% { opacity: .55;}
+  25% { opacity: 0;}
+  30% { opacity: .7;}
+  40% {opacity: .7;}
+  45% { opacity: 0;}
+  50% { opacity: .85;}
+  65% {opacity: .85;}
+  70% { opacity: 0;}
+  75% { opacity: 1;}
+  100% {opacity: 1;}
+}
+.title-content .header-subtitle{
+    display: flex;
+}
+.title-content .header-subtitle .text{
     margin-bottom: 5px;
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: transparent;
@@ -1749,7 +1788,7 @@ a.socialIcon:hover,
     border-radius: 10px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05),
         0 1px rgba(255, 255, 255, 0.8);
-    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    animation: animateContent2 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
 .content2-skills-bar .progress-line span {
@@ -1760,7 +1799,7 @@ a.socialIcon:hover,
     transform-origin: left;
     background: var(--color-about);
     /***#759176;*/
-    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    animation: animateContent2 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
 .content2-skills-bar .progress-line span::before {
@@ -1792,7 +1831,7 @@ a.socialIcon:hover,
     animation: showText2 0.5s 1.5s linear forwards;
 }
 
-@keyframes animate {
+@keyframes animateContent2 {
     100% {
         transform: scaleX(1);
     }
@@ -1901,7 +1940,7 @@ a.socialIcon:hover,
 }
 
 .bg-content-3 {
-    background: #f7f5f1;
+    /* background: #f7f5f1; */
     /* height: 990px; */
 }
 
@@ -2551,12 +2590,29 @@ a.socialIcon:hover,
 /*********** Project end*********/
 /*******************************/
 .bg-content-4{
-    background: #000;
+    background: #f7f5f1;
+}
+.content4-header{
+    margin: 10px 0;
+    text-align: center;
+}
+.content4-title{
+    font-size: 50px;
+    color: var(--color-project);
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-shadow: 0 13.36px 8.896px var(--color-project-box), 0 -2px 1px #fff;
+}
+.content4-subtitle {
+    margin-top: 15px;
+    font-family: system-ui;
+    /* color: var(--color-contact); */
+    /* text-align: justify; */
 }
 .fade-slide {
     opacity: 0;
     transform: translateX(0); /* tránh nhảy lúc load */
-  }
+}
 .bg-content-4 .content-4-box{
     position: relative;
     /* width: 320px;
@@ -2597,12 +2653,14 @@ a.socialIcon:hover,
 .bg-content-4 .content-4-box:hover:before,
 .bg-content-4 .content-4-box:hover:after{
     transform: skew(0deg);
-    left: 20px;
-    width: calc(100% - 90px);
+    left: 10px;
+    width: calc(100% - 50px);
+    
 }
 .bg-content-4 .content-4-box:nth-child(1):before,
 .bg-content-4 .content-4-box:nth-child(1):after{
-    background: linear-gradient(315deg, #03a9f4, #ff0058);
+    /* background: linear-gradient(315deg, #03a9f4, #ff0058); */
+    background: linear-gradient(315deg, #03a9f4, #ff005836);
 }
 .bg-content-4 .content-4box span{
     display: block;
@@ -2623,9 +2681,10 @@ a.socialIcon:hover,
     backdrop-filter: blur(10px);
     opacity: 0;
     transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
+    animation: animateContent4 2s ease-in-out infinite;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
 }
+
 .bg-content-4 .content-4-box:hover span::before{
     top: -50px;
     left: 50px;
@@ -2645,8 +2704,9 @@ a.socialIcon:hover,
     backdrop-filter: blur(10px);
     opacity: 0;
     transition: 0.5s;
-    animation: animate 2s ease-in-out infinite;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+    animation: animateContent4 2s ease-in-out infinite;
+    /* box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05); */
+    box-shadow: 0 15px 15px rgba(221, 21, 21, 0.5);
     animation-delay: -1s;
 }
 .bg-content-4 .content-4-box:hover span::after{
@@ -2656,7 +2716,7 @@ a.socialIcon:hover,
     height: 100px;
     opacity: 1;
 }
-@keyframes animate {
+@keyframes animateContent4 {
     0%,100%
     {
         transform: translateY(10px);
@@ -2665,19 +2725,28 @@ a.socialIcon:hover,
         transform: translateY(-10px);
     }
 }
+
 .bg-content-4 .content-4-box .content-4-content {
     position: relative;
     left: 0;
     padding: 20px 40px;
     background: rgba(255, 255, 255, .05);
-    box-shadow: 0 15px 15px rgba(0, 0, 0, .1);
+    box-shadow: 5px 5px 15px rgba(255, 3, 3, 0.993);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     z-index: 31;
     transition: 0.5s;
-    color: #fff;
+    color: #444;
 }
-  
+
+.bg-content-4 .content-4-box:hover .content-4-content, .bg-content-4 .content-4-box:hover .content-4-content .tools-list li{
+    color: #ffffff;
+}  
+.content-4-content h3{
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 22px;
+}
 .content-4-content .tools-list {
     padding-left: 20px;
   }
@@ -2852,6 +2921,11 @@ a.socialIcon:hover,
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
     transition: 0.5s;
 }
+.contactForm .inputBox input[type="submit"]:hover {
+    background: #fa0317;
+    box-shadow: 0 0 10px rgba(230, 57, 70, 0.6);
+    transform: scale(1.05);
+}
 @media screen and (max-width: 900px) {
     .content-4 .content-5-contact .content5-box{
         flex-direction: column;
@@ -2893,7 +2967,8 @@ footer .footer-text{
     border-radius: 4px;
 }
 .backToTop:hover {
-    background-color: #1baf54;
+    /* background-color: #1baf54; */
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
   }
 /*********** End Contact me **************/
 /* Keyframes for the animation */
@@ -2998,12 +3073,17 @@ footer .footer-text{
         background-color: #191a1d;
         z-index: 99;
     }
-
     .navbar-light .navbar-toggler {
         margin-left: 50%;
     }
     .slider-item3 img, .slider-item4 img, .slider-item5 img, .slider-item6 img, .slider-item7 img, .slider-item8 img, .slider-item9 img {
         width: 0;
+    }
+    .content-2-proftlio{
+        display: unset;
+    }
+    .title-content .header-title .up, .title-content .header-title .down, .title-content .header-subtitle{
+        font-size: 25px;
     }
 }
 
@@ -3019,6 +3099,10 @@ footer .footer-text{
     .slider-item3 img, .slider-item4 img, .slider-item5 img, .slider-item6 img, .slider-item7 img, .slider-item8 img, .slider-item9 img {
         width: 0;
     }
+    .title-content .header-title .up, .title-content .header-title .down, .title-content .header-subtitle{
+        font-size: 30px;
+    }
+    
 }
 @media (max-width: 350px) {
     .navbar-light .navbar-toggler {
@@ -3070,10 +3154,11 @@ footer .footer-text{
     .slider-item17 {}
 
     .slider-item18 {}
+    
+    .title-content .header-title .up, .title-content .header-title .down, .title-content .header-subtitle{
+        font-size: 20px;
+    }
 }
-
-/* Media Query */
-/* For tablet */
 @media screen and (max-width:900px) {
     .content2-text-about-us h5 {
         font-size: 3rem;
