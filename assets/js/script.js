@@ -12,8 +12,6 @@ var sticky = navbar_sticky.offsetTop;
 var navbar_height = document.querySelector('.navbar').offsetHeight;
 const btnBackToTop = document.querySelector(".backToTop");
 
-
-
 function myFunction() {
     const sliderContainer = document.querySelector('.slider-container');
     const sliderItem3 = document.querySelector('.slider-item3');
@@ -54,7 +52,11 @@ function myFunction() {
     // sliderItem20.style.transform = `translate(${20}px, ${20}px)  rotate(15deg)`;
   }
 }
-
+//btn contactme
+function scrollToContact() {
+  const element = document.getElementById("my-contact");
+  element.scrollIntoView({ behavior: "smooth" });
+}
 //var content2_aboutus_height = document.querySelector('#content2-about-us').offsetHeight;
 //var content2_skills_height = document.querySelector('#content2-skills').offsetHeight;
 function myAboutUsFunction() {
