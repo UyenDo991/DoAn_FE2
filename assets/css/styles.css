@@ -2773,18 +2773,18 @@ a.socialIcon:hover,
     }
     100% {
       opacity: 1;
-      transform: translateX(0);
     }
   }
+
   .slide-in-left.show {
     opacity: 1;
+    transition: .5s;
     animation: slideInLeft 1s ease forwards;
 
   }
-  
   .slide-in-right.show {
     opacity: 1;
-    /* transform: translateX(0); */
+    transition: .5s;
     animation: slideInRight 1s ease forwards;
 
   }
@@ -3122,6 +3122,22 @@ footer .footer-text{
     .content-3-projects .parent {
         margin: 0 10%;
     }
+    
+    .slide-in-right.show {
+        opacity: 1;
+        transition: .5s;
+        animation: slideInRight_1 1s ease forwards;
+
+    }
+    @keyframes slideInRight_1 {
+        0% {
+          opacity: 0;
+          transform: translateX(-100px);
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 }
 @media (max-width: 350px) {
     .navbar-light .navbar-toggler {
